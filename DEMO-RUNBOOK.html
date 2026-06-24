@@ -69,10 +69,11 @@
 
   <section style="border:2px solid var(--accent)">
     <h2 style="color:var(--accent)">⚡ Get the files onto this VM (one-click)</h2>
-    <p>Paste into <strong>PowerShell</strong> — downloads the runbook + the CO₂ Excel into <code>Desktop\KN-Agent-Builder-Demo</code> and opens the folder.</p>
+    <p>Paste into <strong>PowerShell</strong> — downloads the runbook + the CO₂ data (Excel <em>and</em> CSV) into <code>Desktop\KN-Agent-Builder-Demo</code> and opens the folder.</p>
     <div class="block">
       <span class="label">PowerShell one-liner</span>
-      <button class="copy" onclick="cp(this)">Copy</button><span class="t">$d="$([Environment]::GetFolderPath('Desktop'))\KN-Agent-Builder-Demo";ni $d -Type Directory -Force|Out-Null;'DEMO-RUNBOOK.html','KN-Global-Logistics-CO2-FY2025.xlsx'|%{iwr "https://raw.githubusercontent.com/jenssgb/kn-agent-builder-demo/master/$_" -OutFile "$d\$_" -UseBasicParsing};ii $d</span></div>
+      <button class="copy" onclick="cp(this)">Copy</button><span class="t">$d="$([Environment]::GetFolderPath('Desktop'))\KN-Agent-Builder-Demo";ni $d -Type Directory -Force|Out-Null;$b="https://raw.githubusercontent.com/jenssgb/kn-agent-builder-demo";@{"DEMO-RUNBOOK.html"="master";"KN-Global-Logistics-CO2-FY2025.xlsx"="fb4c58e";"KN-Global-Logistics-CO2-FY2025.csv"="fb4c58e"}.GetEnumerator()|%{iwr "$b/$($_.Value)/$($_.Key)" -OutFile "$d\$($_.Key)" -UseBasicParsing};Get-ChildItem $d|Unblock-File;ii $d</span></div>
+    <p class="note">Data is <strong>100% synthetic</strong> (no real customers, no sensitivity label). If your VM still can't open the <code>.xlsx</code>, use the <code>.csv</code> — the Code Interpreter accepts it too.</p>
   </section>
 
   <section>
