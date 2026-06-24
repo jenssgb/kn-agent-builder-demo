@@ -1,0 +1,381 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Executive Briefing Assistant — 10-Minute Demo</title>
+<style>
+  :root{
+    --bg:#f5f6f8; --card:#ffffff; --ink:#1b1d21; --muted:#5c6370;
+    --line:#e6e8ec; --accent:#0a5ad4; --accent-soft:#eaf1fd; --code:#f3f4f6;
+  }
+  *{box-sizing:border-box}
+  body{
+    margin:0; background:var(--bg); color:var(--ink);
+    font:16px/1.6 -apple-system,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+    -webkit-font-smoothing:antialiased;
+  }
+  .wrap{max-width:820px; margin:0 auto; padding:48px 24px 80px}
+  header h1{font-size:30px; margin:0 0 6px; letter-spacing:-.02em}
+  header p{margin:0; color:var(--muted)}
+  .meta{display:flex; flex-wrap:wrap; gap:10px; margin:18px 0 36px}
+  .pill{background:var(--accent-soft); color:var(--accent); font-size:13px; font-weight:600;
+    padding:5px 12px; border-radius:999px}
+  section{background:var(--card); border:1px solid var(--line); border-radius:14px;
+    padding:26px 28px; margin:0 0 22px}
+  h2{font-size:13px; text-transform:uppercase; letter-spacing:.08em; color:var(--muted);
+    margin:0 0 16px; font-weight:700}
+  h3{font-size:18px; margin:0 0 8px}
+  p{margin:0 0 12px}
+  .lead{font-size:18px; line-height:1.7}
+  .lead strong{color:var(--accent)}
+  table{width:100%; border-collapse:collapse; font-size:15px}
+  th,td{text-align:left; padding:10px 12px; border-bottom:1px solid var(--line); vertical-align:top}
+  th{font-size:12px; text-transform:uppercase; letter-spacing:.05em; color:var(--muted)}
+  td:first-child{white-space:nowrap; color:var(--accent); font-weight:600; font-variant-numeric:tabular-nums}
+  .block{position:relative; background:var(--code); border:1px solid var(--line);
+    border-radius:10px; padding:18px 20px; margin:14px 0; white-space:pre-wrap;
+    font-size:14.5px; line-height:1.65}
+  .block .label{display:block; font-size:12px; font-weight:700; text-transform:uppercase;
+    letter-spacing:.05em; color:var(--muted); margin-bottom:10px}
+  .copy{position:absolute; top:12px; right:12px; border:1px solid var(--line);
+    background:#fff; color:var(--ink); font-size:12px; font-weight:600; cursor:pointer;
+    padding:6px 12px; border-radius:7px; transition:.15s}
+  .copy:hover{border-color:var(--accent); color:var(--accent)}
+  .copy.done{background:var(--accent); color:#fff; border-color:var(--accent)}
+  ul{margin:0 0 4px; padding-left:20px}
+  li{margin:0 0 8px}
+  .check li{list-style:none; margin-left:-20px}
+  .check li::before{content:"☐ "; color:var(--accent); font-weight:700}
+  .note{color:var(--muted); font-size:14px}
+  blockquote{margin:0; padding:14px 18px; border-left:3px solid var(--accent);
+    background:var(--accent-soft); border-radius:0 8px 8px 0; font-size:16px}
+  code{background:var(--code); border:1px solid var(--line); border-radius:5px;
+    padding:1px 6px; font-size:13.5px; font-family:Consolas,"SF Mono",monospace}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <header>
+    <h1>Executive Briefing Assistant</h1>
+    <p>10-minute live demo &middot; Microsoft 365 Copilot <strong>Agent Builder</strong></p>
+    <div class="meta">
+      <span class="pill">Audience: CEO &amp; Board</span>
+      <span class="pill">No code</span>
+      <span class="pill">Build &amp; run live</span>
+    </div>
+  </header>
+
+  <section>
+    <h2>The story — say this first (60 sec)</h2>
+    <blockquote>Executives don't have an information problem. They have an <strong>attention</strong> problem. Every morning the signal is scattered across calendar, mail, Teams and the outside world. Let me build you an assistant — live, in two minutes — that gives you one prioritized brief and the <strong>top 3 things that need your decision today</strong>.</blockquote>
+    <p class="note" style="margin-top:14px">This is not a generic AI demo. It's an executive <strong>attention-management</strong> demo.</p>
+  </section>
+
+  <section>
+    <h2>Run-of-show (10 minutes)</h2>
+    <table>
+      <tr><th>Time</th><th>You do</th><th>They see</th></tr>
+      <tr><td>0:00–1:00</td><td>Tell the story above</td><td>The problem, in their language</td></tr>
+      <tr><td>1:00–4:00</td><td>Build it live in the <strong>Describe</strong> tab — one short line, then refine in conversation</td><td>Name, description, instructions, icon &amp; starter prompts generated automatically</td></tr>
+      <tr><td>4:00–5:30</td><td>Switch to the <strong>Configure</strong> tab</td><td>Control over Knowledge, Capabilities, Starter prompts — the governance story</td></tr>
+      <tr><td>5:30–8:30</td><td>Run Demo Prompt 1, then 2</td><td>A real brief ending in "Top 3 actions for me today"</td></tr>
+      <tr><td>8:30–10:00</td><td>Close: Agent Builder vs. Copilot Studio</td><td>When to use what; the path to integration</td></tr>
+    </table>
+  </section>
+
+  <section>
+    <h2>Step 1 — Build it live in the <em>Describe</em> tab</h2>
+    <p class="note" style="margin-bottom:16px">Start like a real person would: <strong>one short sentence</strong>. The Agent Builder asks follow-up questions — you refine in conversation. Paste the refinements below as it asks.</p>
+
+    <div class="block">
+      <span class="label">① Opening line — what you type first</span>
+      <button class="copy" onclick="cp(this)">Copy</button><span class="t">Help me build an assistant for myself that prepares one prioritized briefing each morning — what needs my attention and my decisions today — instead of me digging through my calendar, mail and Teams.</span></div>
+
+    <div class="block">
+      <span class="label">② Refine — when it asks what to include</span>
+      <button class="copy" onclick="cp(this)">Copy</button><span class="t">Cover today's meetings with the likely goal and one talking point, plus the emails and Teams messages that actually need a decision, and any relevant external logistics or AI news.</span></div>
+
+    <div class="block">
+      <span class="label">③ Refine — format &amp; tone</span>
+      <button class="copy" onclick="cp(this)">Copy</button><span class="t">Label everything [Internal] or [External], keep it to short bullet points, and always end with a section called "Top 3 actions for me today".</span></div>
+
+    <div class="block">
+      <span class="label">④ Refine — guardrail</span>
+      <button class="copy" onclick="cp(this)">Copy</button><span class="t">Make clear it only briefs and prioritizes — it never sends messages, updates systems or runs workflows.</span></div>
+
+    <div class="block">
+      <span class="label">⑤ Refine — bonus personality (Hamburg)</span>
+      <button class="copy" onclick="cp(this)">Copy</button><span class="t">Always start the briefing with the typical Hamburg greeting: "Moin Moin!"</span></div>
+
+    <p class="note">As you chat, Agent Builder fills in name, description, instructions, icon and starter prompts. Rename to <strong>K+N Executive Briefing Assistant</strong> and move on.</p>
+  </section>
+
+  <section>
+    <h2>Talking point — "Why an agent? I could just prompt Copilot"</h2>
+    <p class="lead">True — you could type this as a one-off prompt. The point of an <strong>agent</strong> is that you do it <strong>once</strong> and keep it:</p>
+    <ul>
+      <li><strong>Reusable</strong> — one click every morning, no re-typing the prompt.</li>
+      <li><strong>Consistent</strong> — the format is baked in (always [Internal]/[External], always "Top 3 actions").</li>
+      <li><strong>Grounded &amp; scoped</strong> — you set its knowledge and capabilities once.</li>
+      <li><strong>Shareable &amp; governed</strong> — hand it to the whole leadership team; IT can govern it.</li>
+    </ul>
+    <blockquote style="margin-top:10px">A prompt is a one-off. An agent is that prompt turned into a reusable, shareable, governed capability.</blockquote>
+  </section>
+
+  <section>
+    <h2>Step 2 — Show <em>Configure</em> (control story, 90 sec)</h2>
+    <ul>
+      <li><strong>Knowledge</strong> — for this agent we add <strong>My emails</strong> (Outlook) and <strong>My Teams chats and meetings</strong>; could also add SharePoint or files.</li>
+      <li><strong>Capabilities</strong> — Web search on; Code Interpreter optional (quick table of open actions).</li>
+      <li><strong>Starter prompts</strong> — the one-click prompts users see first.</li>
+    </ul>
+    <blockquote style="margin-top:10px">Everything the agent can see and do is configured here. That's the governance story.</blockquote>
+  </section>
+
+  <section>
+    <h2>Reference — what Agent Builder can do (explain on the go)</h2>
+
+    <h3 style="margin-top:4px">Knowledge sources (what it can ground on)</h3>
+    <ul>
+      <li><strong>Outlook email</strong> — "My emails" &nbsp;<span class="note">(needs Copilot add-on license)</span></li>
+      <li><strong>Microsoft Teams</strong> — "My Teams chats and meetings", or scope to up to <strong>5 specific chats / channels / meeting chats</strong> &nbsp;<span class="note">(needs Copilot license)</span></li>
+      <li><strong>SharePoint</strong> — sites, folders, files (up to 100 files); respects permissions &amp; sensitivity labels</li>
+      <li><strong>OneDrive</strong> — up to 50 files</li>
+      <li><strong>Public websites</strong> — up to 4 URLs (max 2 levels, no query params), or a "Search all websites" toggle</li>
+      <li><strong>Uploaded files</strong> — embedded from your device (Configure tab)</li>
+      <li><strong>Copilot connectors</strong> — enterprise data (Graph connectors), if your admin enabled them</li>
+    </ul>
+    <p class="note">Up to 20 knowledge sources per agent. For <strong>this</strong> agent we add <strong>My emails</strong> + <strong>My Teams chats and meetings</strong>.</p>
+
+    <h3 style="margin-top:20px">Capabilities (what it can do)</h3>
+    <ul>
+      <li><strong>Web search</strong> — ground answers on live public web content (the [External] signals).</li>
+      <li><strong>Code interpreter</strong> — runs Python to analyze data and build charts/tables; e.g. a quick table of open actions by urgency, or analyze an attached Excel.</li>
+      <li><strong>Image generator</strong> — creates images from a prompt (DALL·E). Not needed for this agent.</li>
+    </ul>
+
+    <h3 style="margin-top:20px">Three ways to start</h3>
+    <ul>
+      <li><strong>Describe</strong> (recommended) — natural language builds it for you.</li>
+      <li><strong>Configure</strong> — fill the fields manually (Skip to configure).</li>
+      <li><strong>Template</strong> — start from a preconfigured use case.</li>
+    </ul>
+  </section>
+
+  <section>
+    <h2>Step 3 — Run it (the payoff)</h2>
+
+    <div class="block">
+      <span class="label">Demo Prompt 1 — Daily briefing</span>
+      <button class="copy" onclick="cp(this)">Copy</button><span class="t">Prepare my executive briefing for today. Include today's meetings, actionable emails, Teams messages and relevant external logistics/AI signals. Label each item [Internal] or [External]. End with "Top 3 actions for me today".</span></div>
+
+    <div class="block">
+      <span class="label">Demo Prompt 2 — Meeting prep</span>
+      <button class="copy" onclick="cp(this)">Copy</button><span class="t">Prepare me for the Leadership Session: Introduction to Copilot Agents. Give me the purpose, likely stakeholder expectations, suggested talking points, risks to avoid and the top 3 decisions needed.</span></div>
+
+    <div class="block">
+      <span class="label">Backup — if live data is thin</span>
+      <button class="copy" onclick="cp(this)">Copy</button><span class="t">Based on everything you found, give me the top 3 actions I should take today. For each, explain why it matters, who is involved and what I should do next.</span></div>
+  </section>
+
+  <section>
+    <h2>Step 4 — Close (60 sec)</h2>
+    <blockquote>What you just saw took two minutes and no code. <strong>Agent Builder</strong> is for fast, personal and team agents grounded in your M365 content. When we need live system integration — CoreLOG, connectors, automated actions — that's <strong>Copilot Studio</strong>. Same idea, more power. Start here, graduate there.</blockquote>
+  </section>
+
+  <section>
+    <h2>Fallback — full instructions (paste into <em>Configure → Instructions</em>)</h2>
+    <p class="note" style="margin-bottom:14px">If the conversational build isn't crisp enough, drop Anne's complete instruction set straight into the Instructions field.</p>
+    <div class="block">
+      <span class="label">Anne's original agent instructions</span>
+      <button class="copy" onclick="cp(this)">Copy</button><span class="t"># Executive Briefing Assistant Instructions
+
+## Mission
+Prepare a concise daily briefing for executives covering meetings, actionable messages, and news from Blue Net.
+
+## Approach
+- Gather and summarise meetings, emails, Teams messages, channel conversations, and industry news.
+- Deliver clear bullet points, categorized by source ([Internal] for organizational content, [External] for public or industry information).
+
+## Workflow
+### 1. Meeting Preparation
+- List today's meetings (time, title, attendees if available).
+- For each meeting, include:
+    - Goal (reason for meeting)
+    - Suggested talking point
+
+### 2. Messages and Channel Conversations Summarization
+- Summarise all emails, Teams messages, and Teams channel conversations requiring executive action/decision.
+- For each, state:
+    - Sender/subject or channel
+    - Action required
+
+### 3. Industry Briefing
+- Search for the latest, relevant external news or insights for the requested topic.
+- Include reputable links and summarize key points.
+
+### 4. Visual Summary (if data/metrics are present)
+- Present a summary table or simple chart for easy review.
+
+### 5. Top 3 Actions
+- Prioritize and present the three most important actions based on meetings and actionable messages.
+
+## Tone
+- Use clear, direct, and actionable language.
+- Bullet points only, grouping by [Internal] or [External].
+- Finish with "Top 3 actions for me today."
+
+## Examples
+- Meeting: Finance Review (10am)
+    - Goal: Approve Q2 budget adjustments
+    - Suggested talking point: Align spending with strategic priorities
+- Message: Email from Jane Doe (Budget approval needed)
+    - Action: Approve or request revisions
+- Channel: #project-updates
+    - Action: Provide decision on next sprint priorities
+- Industry Brief: [External] Link to latest market trend
+    - Summary: Key findings relevant to executive decisions
+- Visualization: Table showing open actions by urgency
+
+## Restrictions
+- Do not include sensitive or confidential content in summaries.
+- Avoid duplicating information.
+
+## Feedback & Closing
+- Always conclude with prioritized actions and sources labeled clearly.</span></div>
+  </section>
+
+  <section style="border-top:4px solid var(--accent)">
+    <h2 style="color:var(--accent)">★ Bonus Agent — Sustainability Board Analyst (Python + Web)</h2>
+    <p class="lead">Second agent, real <strong>Wumms</strong>: upload one big shipment file, the agent runs <strong>Python (Code Interpreter)</strong> to compute our CO₂ footprint, plots charts, and combines it with <strong>live web</strong> regulation signals — then writes a board-ready summary.</p>
+    <blockquote>"You don't get a chatbot. You get an analyst that reads 25,000 shipments, finds where the carbon really sits, and tells the board what to do about it — in 30 seconds."</blockquote>
+    <p class="note" style="margin-top:12px"><strong>File to upload:</strong> <code>KN-Global-Logistics-CO2-FY2025.xlsx</code> (in this folder — 25,000 shipments, ~3 MB).</p>
+  </section>
+
+  <section>
+    <h2>Agent 2 — build it (Describe tab)</h2>
+    <div class="block">
+      <span class="label">① Opening line</span>
+      <button class="copy" onclick="cp(this)">Copy</button><span class="t">Help me build an analyst agent for our sustainability board report. I will upload our global shipment data as Excel, and I want it to calculate our CO2 footprint and turn it into clear, board-ready insights and charts.</span></div>
+    <div class="block">
+      <span class="label">② Refine — analysis</span>
+      <button class="copy" onclick="cp(this)">Copy</button><span class="t">Break emissions down by transport mode, trade lane and customer, show the monthly trend, and highlight where a small share of shipments drives a large share of emissions.</span></div>
+    <div class="block">
+      <span class="label">③ Refine — combine with the web</span>
+      <button class="copy" onclick="cp(this)">Copy</button><span class="t">Also pull in relevant external signals — EU maritime ETS, CBAM, and Sustainable Aviation Fuel mandates — and explain in plain language what they mean for a global freight forwarder like us.</span></div>
+    <div class="block">
+      <span class="label">④ Refine — output</span>
+      <button class="copy" onclick="cp(this)">Copy</button><span class="t">Produce charts and a downloadable one-page board summary with the top 3 decarbonization actions and their estimated CO2 impact.</span></div>
+    <p class="note">Rename to <strong>K+N Sustainability Board Analyst</strong>.</p>
+  </section>
+
+  <section>
+    <h2>Agent 2 — full instructions (paste into <em>Configure → Instructions</em>, no wizard)</h2>
+    <p class="note" style="margin-bottom:8px"><strong>Name:</strong> K+N Sustainability Board Analyst &nbsp;·&nbsp; <strong>Description:</strong> Analyzes global shipment data with Python and live regulation signals to produce a board-ready CO₂ briefing.</p>
+    <div class="block">
+      <span class="label">Ready-to-paste instructions</span>
+      <button class="copy" onclick="cp(this)">Copy</button><span class="t"># K+N Sustainability Board Analyst — Instructions
+
+## Mission
+You turn Kuehne+Nagel global shipment data into a clear, credible, board-ready CO2 (carbon) briefing. The user uploads an Excel file of shipments. You analyze it with the code interpreter (Python) and, when asked, combine it with current external regulation signals from the web.
+
+## Data you receive
+Expect an Excel/CSV with one row per shipment and these columns:
+ShipmentID, Date, Customer, Industry, Origin, Destination, TradeLane, Mode (Sea/Air/Rail/Road), Carrier, Weight_tonnes, TEU, Distance_km, TonneKm, FuelType (Fossil/SAF/Biofuel-HVO), CO2_tonnes (CO2e), CO2_intensity_g_per_tkm, Revenue_EUR, Cost_EUR, Margin_EUR, PromisedDays, TransitDays, OnTime, DelayReason.
+Always compute results from the actual uploaded file using the code interpreter. Never estimate from memory when the data is available.
+
+## What to analyze
+1. Total footprint: total CO2e (tonnes), total tonne-km, and average intensity (g CO2e per tonne-km).
+2. By mode: each mode's share of shipments vs its share of CO2e; call out the mode that over-indexes the most.
+3. Trend: monthly CO2e and average intensity across the year.
+4. Sustainable fuel: how SAF / biofuel (HVO) adoption changed emission intensity over time.
+5. Hotspots: top customers and trade lanes by CO2e; flag any customer whose footprint is dominated by air freight.
+6. Opportunities: modal-shift potential (e.g., Road to Rail on short European lanes) and lower-efficiency carriers.
+
+## Visuals and files
+Use the code interpreter to produce clear bar and line charts. When asked, generate a downloadable one-page board summary (PDF or PowerPoint) and, if useful, an Excel with the key tables.
+
+## External context (web)
+When asked, search for and summarize current, relevant regulation: EU Emissions Trading System for maritime (EU ETS), CBAM, and Sustainable Aviation Fuel mandates (e.g. ReFuelEU). Explain in plain language what each means for a global freight forwarder. Cite reputable sources with links. Label external findings [External] and data findings [Internal].
+
+## Output style
+- Lead with the single most important number or insight.
+- Use concise bullets and small tables; keep it executive-ready.
+- End every board-style answer with "Top 3 decarbonization actions" — each with an estimated CO2 reduction and a rough cost/feasibility note.
+
+## Tone
+Direct, quantified, board-appropriate. Avoid jargon. Round large numbers.
+
+## Restrictions
+- Compute from the uploaded data; never invent figures.
+- Clearly separate facts (from data), assumptions, and missing data.
+- You analyze and advise only. You do not send messages, update systems, or take real-world actions.</span></div>
+  </section>
+
+  <section>
+    <h2>Agent 2 — configure (the two switches that matter)</h2>
+    <ul>
+      <li><strong>Code interpreter</strong> — ON (toggle "Create documents, charts, and code"). This is the Python engine.</li>
+      <li><strong>Web search</strong> — ON, for the external regulation signals.</li>
+      <li><strong>Knowledge</strong> — none needed; you upload the Excel live in the chat. (Optionally pin it via SharePoint.)</li>
+    </ul>
+  </section>
+
+  <section>
+    <h2>Agent 2 — run it (upload the Excel first, then paste)</h2>
+    <div class="block">
+      <span class="label">Prompt 1 — footprint by mode</span>
+      <button class="copy" onclick="cp(this)">Copy</button><span class="t">Here is our FY2025 global shipment data. Calculate total CO2e in tonnes and break it down by transport mode. For each mode show its share of shipments versus its share of emissions, and tell me which mode over-indexes the most.</span></div>
+    <div class="block">
+      <span class="label">Prompt 2 — trend &amp; sustainable fuel</span>
+      <button class="copy" onclick="cp(this)">Copy</button><span class="t">Plot the monthly CO2 trend for the year, and show how sustainable fuel adoption (SAF / biofuel) changed our average emission intensity (g CO2e per tonne-km) over time.</span></div>
+    <div class="block">
+      <span class="label">Prompt 3 — hotspots</span>
+      <button class="copy" onclick="cp(this)">Copy</button><span class="t">Which customers and trade lanes are our emission hotspots? Show the top 10 by total CO2e as a bar chart, and flag any customer whose footprint is dominated by air freight.</span></div>
+    <div class="block">
+      <span class="label">Prompt 4 — board summary (Python + Web)</span>
+      <button class="copy" onclick="cp(this)">Copy</button><span class="t">Combine this analysis with current EU maritime ETS, CBAM and SAF regulations. Give me the top 3 decarbonization actions with estimated CO2 reduction and a rough cost/feasibility note, and produce a downloadable one-page board summary.</span></div>
+  </section>
+
+  <section>
+    <h2>Agent 2 — what they'll find (your cheat sheet)</h2>
+    <p class="note" style="margin-bottom:12px">The agent computes this live — these are the planted stories so you know where it lands:</p>
+    <ul>
+      <li><strong>Air freight over-indexes hard</strong> — ~15% of shipments but ~34% of total CO₂e. The headline.</li>
+      <li><strong>Sea</strong> is the biggest absolute emitter (~55%) because it carries the most tonnage — context, not villain.</li>
+      <li><strong>Road</strong> is ~31% of shipments but only ~3–4% of CO₂ (short legs) → <strong>modal-shift to Rail</strong> story.</li>
+      <li><strong>Sustainable fuel</strong> (SAF/biofuel) adoption rises through the year and visibly lowers emission intensity.</li>
+      <li><strong>"Aurelia Pharma"</strong> shows up as an air-freight emission hotspot customer.</li>
+      <li>Total footprint ≈ <strong>150,000 t CO₂e</strong> across 25,000 shipments.</li>
+    </ul>
+  </section>
+
+  <section>
+    <h2>Pre-flight checklist</h2>
+    <ul class="check">
+      <li>Agent already pre-built with Anne (full Instructions) as a safety net — live wizard is for the story</li>
+      <li>Signed in to M365 Copilot with the demo account; Agent Builder available</li>
+      <li>Calendar / Teams have a couple of realistic items for today (or use the backup prompt)</li>
+      <li>Bonus agent: Code interpreter ON; <code>KN-Global-Logistics-CO2-FY2025.xlsx</code> ready to upload</li>
+      <li>Browser zoom up; notifications off</li>
+      <li>This file open on a second screen</li>
+    </ul>
+  </section>
+
+</div>
+
+<script>
+function cp(btn){
+  const txt = btn.parentElement.querySelector('.t').innerText;
+  navigator.clipboard.writeText(txt).then(()=>{
+    const old = btn.textContent;
+    btn.textContent = 'Copied ✓';
+    btn.classList.add('done');
+    setTimeout(()=>{ btn.textContent = old; btn.classList.remove('done'); }, 1500);
+  });
+}
+</script>
+</body>
+</html>
